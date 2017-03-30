@@ -12,7 +12,9 @@
 		4C5021581E8BD56D00FA6418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C5021561E8BD56D00FA6418 /* Main.storyboard */; };
 		4C50215A1E8BD56D00FA6418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C5021591E8BD56D00FA6418 /* Assets.xcassets */; };
 		4C50215D1E8BD56D00FA6418 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C50215B1E8BD56D00FA6418 /* LaunchScreen.storyboard */; };
-		4C5021661E8BD95700FA6418 /* jsdemo.js in Resources */ = {isa = PBXBuildFile; fileRef = 4C5021651E8BD95700FA6418 /* jsdemo.js */; };
+		4C5021681E8C26FD00FA6418 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 4C5021671E8C26FD00FA6418 /* script.js */; };
+		4C50216A1E8C2D9F00FA6418 /* ScriptEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5021691E8C2D9F00FA6418 /* ScriptEngine.swift */; };
+		4C50216C1E8C4B8200FA6418 /* code.js in Resources */ = {isa = PBXBuildFile; fileRef = 4C50216B1E8C4B8200FA6418 /* code.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		4C5021591E8BD56D00FA6418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C50215C1E8BD56D00FA6418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C50215E1E8BD56D00FA6418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C5021651E8BD95700FA6418 /* jsdemo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsdemo.js; sourceTree = "<group>"; };
+		4C5021671E8C26FD00FA6418 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		4C5021691E8C2D9F00FA6418 /* ScriptEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptEngine.swift; sourceTree = "<group>"; };
+		4C50216B1E8C4B8200FA6418 /* code.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = code.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 				4C5021591E8BD56D00FA6418 /* Assets.xcassets */,
 				4C50215B1E8BD56D00FA6418 /* LaunchScreen.storyboard */,
 				4C50215E1E8BD56D00FA6418 /* Info.plist */,
+				4C5021691E8C2D9F00FA6418 /* ScriptEngine.swift */,
 			);
 			path = JSDemo;
 			sourceTree = "<group>";
@@ -70,7 +75,8 @@
 		4C5021641E8BD93500FA6418 /* js */ = {
 			isa = PBXGroup;
 			children = (
-				4C5021651E8BD95700FA6418 /* jsdemo.js */,
+				4C50216B1E8C4B8200FA6418 /* code.js */,
+				4C5021671E8C26FD00FA6418 /* script.js */,
 			);
 			name = js;
 			sourceTree = "<group>";
@@ -135,9 +141,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5021681E8C26FD00FA6418 /* script.js in Resources */,
 				4C50215D1E8BD56D00FA6418 /* LaunchScreen.storyboard in Resources */,
 				4C50215A1E8BD56D00FA6418 /* Assets.xcassets in Resources */,
-				4C5021661E8BD95700FA6418 /* jsdemo.js in Resources */,
+				4C50216C1E8C4B8200FA6418 /* code.js in Resources */,
 				4C5021581E8BD56D00FA6418 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C50216A1E8C2D9F00FA6418 /* ScriptEngine.swift in Sources */,
 				4C5021551E8BD56D00FA6418 /* ViewController.swift in Sources */,
 				4C5021531E8BD56D00FA6418 /* AppDelegate.swift in Sources */,
 			);
@@ -314,6 +322,7 @@
 				4C5021631E8BD56D00FA6418 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,46 +14,56 @@ class ViewController: UIViewController {
     lazy var context: JSContext? = {
         let context = JSContext()
         
-        guard let javaScriptFile = Bundle.main.path(forResource: "jsdemo", ofType: "js") else {
+        guard let file = Bundle.main.path(forResource: "code", ofType: "js") else {
             print("File not found")
             return nil
         }
         
         do {
             // TODO: Contents of URL
-            let script = try String(contentsOfFile: javaScriptFile, encoding: String.Encoding.utf8)
+            let script = try String(contentsOfFile: file, encoding: String.Encoding.utf8)
             _ = context?.evaluateScript(script)
         } catch (let error) {
             print("Error processing JavaScript file: \(error)")
         }
-        
+
         return context
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         guard let context = context else {
             print("Context not found")
             return
         }
         
-        if let hello = context.evaluateScript("helloFromJavaScript") {
-            let value = hello.call(withArguments: nil)
+        // Call JavaScript method
+        if let greet = context.objectForKeyedSubscript("greet") {
+            let value = greet.call(withArguments: ["from JavaScript"]).toString()
             print(value!)
         }
         
-        if let greet = context.objectForKeyedSubscript("greet") {
-            let value = greet.call(withArguments: ["Michael"]).toString()
-            print(value!)
+        // Access JavaScript value
+        if let value = context.objectForKeyedSubscript("value") {
+            print("JS Property: \(value.toInt32())")
         }
+        
+        // Expose block to JavaScript
+        context.setObject(hello, forKeyedSubscript: "hello" as (NSCopying & NSObjectProtocol)!)
+        print(context.evaluateScript("hello('block')"))
+
+        let scriptEngine = ScriptEngine()
+        scriptEngine.runScript(scriptName: "script")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    let hello: @convention(block) (String) -> String = { name in
+        return "Hello " + name
+    }
+    
 }
-
